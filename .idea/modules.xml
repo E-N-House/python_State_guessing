@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Python_Project_24_MailMerge.iml" filepath="$PROJECT_DIR$/.idea/Python_Project_24_MailMerge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Python_Project_25/.idea/Python_Project_25.iml" filepath="$PROJECT_DIR$/../Python_Project_25/.idea/Python_Project_25.iml" />
+    </modules>
+  </component>
+</project>

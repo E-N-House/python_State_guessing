@@ -1,0 +1,2 @@
+The file didn't exist at first and we are in write mode.
+ so the computer created the new_file.txt and then added this info
