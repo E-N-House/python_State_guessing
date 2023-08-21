@@ -15,9 +15,9 @@ class StateName(Turtle):
         self.was_guessed = False
         self.display_name()
 
-    def display_name(self):
+    def display_name(self, font=FONT):
         self.clear()
-        self.write(arg=self.state, font=FONT, align=ALIGNMENT)
+        self.write(arg=self.state, font=font, align=ALIGNMENT)
     #
     # def is_answer(self, answer):
     #     if self.state.lower() == answer:

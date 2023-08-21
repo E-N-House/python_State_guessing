@@ -26,6 +26,8 @@ while game_is_on:
     curr_guess = data[data.state.str.lower() == user_answer]
     # remove the entry if it has already been guessed
     # data = data.drop(data[data.state.str.lower() == user_answer].index)
+
+
     # check if the answer is already accounted for in string of answers
     if correct_guesses.find(user_answer) != -1:
         pass
@@ -41,6 +43,12 @@ while game_is_on:
         StateName(curr_state, curr_x, curr_y)
         # score updates with each correct answer score/50
         corrects += 1
+        # check if win condition met
+        if corrects == 50:
+            win_message = StateName("You win!! \n All 50 Guessed", 0, 0)
+            Font = ("Courier", 50, "normal")
+            win_message.display_name(font=Font)
+            game_is_on = False
     else:
         # prompt reappears
         pass
