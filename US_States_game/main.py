@@ -32,9 +32,9 @@ while game_is_on:
     # will place values on screen and display if there
     elif len(curr_guess) == 1:
         # transform values from dataframe into strings or ints as needed
-        curr_state = curr_guess.state.to_string(index=False)
-        curr_x = int(curr_guess.x.to_string(index=False))
-        curr_y = int(curr_guess.y.to_string(index=False))
+        curr_state = curr_guess.state.item()
+        curr_x = int(curr_guess.x.item())
+        curr_y = int(curr_guess.y.item())
         # record list of guesses
         correct_guesses += f" {curr_state.lower()}"
         # create the new stateName
