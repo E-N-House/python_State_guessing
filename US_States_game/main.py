@@ -22,10 +22,21 @@ correct_guesses = []
 attempts = 0
 all_states = data.state.to_list()
 
+# store hidden message
+exit_prompt = f" You've guessed over {attempts} times. \n Type 'exit' to receive a study list. Or keep guessing."
+want_to_exit = StateName(exit_prompt, 0, 250)
+want_to_exit.clear()
+
 game_is_on = True
 while game_is_on:
     # prompt that takes a state name and has a submit button
-    user_answer = screen.textinput(title= f"{len(correct_guesses)}/50 states correct",prompt="Type a state name.").title()
+    if attempts > 100:
+        Font = ("Courier", 14, "bold")
+        want_to_exit.clear()
+        want_to_exit.display_name(font=Font)
+    user_answer = screen.textinput(title=f"{len(correct_guesses)}/50 states correct",
+                                   prompt="Type a state name.").title()
+    attempts += 1
     # on submit will check if value exists in list
     curr_guess = data[data.state == user_answer]
     # remove the entry if it has already been guessed
@@ -39,9 +50,9 @@ while game_is_on:
         for state in all_states:
             if state not in correct_guesses:
                 states_to_learn.append(state)
-        pandas.Series(data=states_to_learn, name="state").to_csv("states_to_learn.csv")
+        pandas.DataFrame(states_to_learn).to_csv("states_to_learn.csv")
         game_is_on = False
-        pass
+        break
     if user_answer in correct_guesses:
         pass
     # will place values on screen and display if there
