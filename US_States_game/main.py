@@ -26,8 +26,6 @@ while game_is_on:
     curr_guess = data[data.state.str.lower() == user_answer]
     # remove the entry if it has already been guessed
     # data = data.drop(data[data.state.str.lower() == user_answer].index)
-
-
     # check if the answer is already accounted for in string of answers
     if correct_guesses.find(user_answer) != -1:
         pass
