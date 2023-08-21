@@ -50,7 +50,7 @@ while game_is_on:
             win_message.display_name(font=Font)
             game_is_on = False
     else:
-        # prompt reappears
+        # prompt reappearss
         pass
 
 screen.exitonclick()
