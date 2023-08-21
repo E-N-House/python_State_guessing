@@ -13,14 +13,15 @@ class StateName(Turtle):
         self.goto(x, y)
         self.state = state
         self.was_guessed = False
+        self.display_name()
 
     def display_name(self):
         self.clear()
         self.write(arg=self.state, font=FONT, align=ALIGNMENT)
-
-    def is_answer(self, answer):
-        if self.state.lower() == answer:
-            self.was_guessed = True
-            return True
-        else:
-            pass
+    #
+    # def is_answer(self, answer):
+    #     if self.state.lower() == answer:
+    #         self.was_guessed = True
+    #         return True
+    #     else:
+    #         pass
