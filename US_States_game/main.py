@@ -21,9 +21,9 @@ corrects = 0
 game_is_on = True
 while game_is_on:
     # prompt that takes a state name and has a submit button
-    user_answer = screen.textinput(title= f"{corrects}/50 states correct",prompt="Type a state name.").lower()
+    user_answer = screen.textinput(title= f"{corrects}/50 states correct",prompt="Type a state name.").title()
     # on submit will check if value exists in list
-    curr_guess = data[data.state.str.lower() == user_answer]
+    curr_guess = data[data.state == user_answer]
     # remove the entry if it has already been guessed
     # data = data.drop(data[data.state.str.lower() == user_answer].index)
     # check if the answer is already accounted for in string of answers
@@ -36,7 +36,7 @@ while game_is_on:
         curr_x = int(curr_guess.x.item())
         curr_y = int(curr_guess.y.item())
         # record list of guesses
-        correct_guesses += f" {curr_state.lower()}"
+        correct_guesses += f" {curr_state}"
         # create the new stateName
         StateName(curr_state, curr_x, curr_y)
         # score updates with each correct answer score/50
