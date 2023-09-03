@@ -7,12 +7,11 @@ nato_data_frame = pandas.read_csv("nato_phonetic_alphabet.csv")
 # {"A": "Alfa", "B": "Bravo"}
 nato_dict = {row.letter: row.code for (index, row) in nato_data_frame.iterrows()}
 
-#TODO 2. Create a list of the phonetic code words from a word that the user inputs.
+#Create a list of the phonetic code words from a word that the user inputs.
 
 # prompt user input AND
-# convert user input to an upper case list for each letter
-
-user_input = list(input("Enter the word you'd like to translate\n").upper())
+# convert user input to an upper case
+user_input = input("Enter the word you'd like to translate\n").upper()
 
 # need to pull the code and input it into the phrase
 
