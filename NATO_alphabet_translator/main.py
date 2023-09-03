@@ -32,6 +32,6 @@ user_phrase = ""
 # print(user_phrase)
 
 # refactored above into list comprehension
-user_phrase_list_comp = [nato_dict[letter] for letter in user_input_list if letter in nato_dict]
+user_phrase_list_comp = [f"{nato_dict[letter]} " for letter in user_input_list if letter in nato_dict]
 print(str.join("", user_phrase_list_comp))
 
