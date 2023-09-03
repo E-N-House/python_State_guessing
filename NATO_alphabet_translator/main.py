@@ -11,7 +11,7 @@ print(nato_dict)
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 
 # prompt user input
-user_input = ("abc aa z bb")
+user_input = ("z aa z bb")
     # input("Enter the word you'd like to translate\n"))
 
 # convert user input to to an upper case list for each letter
