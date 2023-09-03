@@ -19,13 +19,16 @@ user_input = "z aa z bb"
 user_input_list = [letter.upper() for letter in user_input]
 
 # need to pull the code and input it into the phrase
-# Can I nest these?
+
 # currently this is going through the nato alphabet and copying over the code if the letter is in the user input
 user_phrase_codes_present_list = [code for (letter, code) in nato_dict.items() if letter in user_input_list]
+
 # using for loop need to refactor into a list comprehension
 user_phrase = ""
 # need to go through the letters in the user input and replace each with the corresponding nato code from the nato_dict
 for letter in user_input_list:
+    if letter == " ":
+        user_phrase += " space"
     for dict_letter in nato_dict:
         if letter == dict_letter:
             user_phrase += f" {nato_dict[dict_letter]}"
