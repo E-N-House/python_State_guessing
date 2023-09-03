@@ -16,8 +16,8 @@ user_input = input("Enter the word you'd like to translate\n").upper()
 # need to pull the code and input it into the phrase
 
 # refactored above into list comprehension this skips over letters or symbols not in nato_dict
-code_phrase = [f"{nato_dict[letter]} " if letter in nato_dict else letter for letter in user_input]
-# code_phrase = [f"{nato_dict[letter]} " for letter in user_input]
+code_phrase = [f"{nato_dict[letter]} " if letter in nato_dict else "space " if letter == " " \
+    else letter for letter in user_input]
 print(str.join("", code_phrase))
 
 
