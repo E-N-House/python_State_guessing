@@ -12,7 +12,7 @@ print(nato_dict)
 
 # prompt user input
 # TEMP BELOW
-user_input = "z aa z bb"
+user_input = "z a b"
     # input("Enter the word you'd like to translate\n"))
 
 # convert user input to to an upper case list for each letter
@@ -26,11 +26,14 @@ user_phrase_codes_present_list = [code for (letter, code) in nato_dict.items() i
 # using for loop need to refactor into a list comprehension
 user_phrase = ""
 # need to go through the letters in the user input and replace each with the corresponding nato code from the nato_dict
-for letter in user_input_list:
-    if letter == " ":
-        user_phrase += " space"
-    for dict_letter in nato_dict:
-        if letter == dict_letter:
-            user_phrase += f" {nato_dict[dict_letter]}"
-print(user_phrase)
+# for letter in user_input_list:
+#     if letter == " ":
+#         user_phrase += " space"
+#     for dict_letter in nato_dict:
+#         if letter == dict_letter:
+#             user_phrase += f" {nato_dict[dict_letter]}"
+# print(user_phrase)
+
+user_phrase_list_comp = [nato_dict[letter] for letter in user_input_list if letter in nato_dict]
+print(str.join("", user_phrase_list_comp))
 
