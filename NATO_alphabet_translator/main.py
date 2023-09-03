@@ -16,8 +16,11 @@ user_input = ("abc aa z bb")
 
 # convert user input to to an upper case list for each letter
 user_input_list = [letter.upper() for letter in user_input]
+
 print(nato_dict.items())
-user_phrase = {letter: code for (letter, code) in nato_dict.items() if letter in user_input_list}
+# need to pull the code and input it into the phrase
+# Can I nest these?
+user_phrase =[code for (letter, code) in nato_dict.items() if letter in user_input_list]
 print("user_input_list")
 print(user_input_list)
 print("user_phrase")
