@@ -46,10 +46,7 @@ while game_is_on:
     # does user want to leave game and get study list?
     if user_answer == "Exit":
         # need to cycle through the correct guesses and create a list of states not in it
-        states_to_learn = []
-        for state in all_states:
-            if state not in correct_guesses:
-                states_to_learn.append(state)
+        states_to_learn = [state for state in all_states if state not in correct_guesses]
         pandas.DataFrame(states_to_learn).to_csv("states_to_learn.csv")
         game_is_on = False
         break
